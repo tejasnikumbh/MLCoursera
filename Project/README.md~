@@ -1,0 +1,67 @@
+===========================================================================================
+File:  README.md (READ ME file for project on convolution networks.)
+===========================================================================================
+
+Introduction : - 
+***************
+    This course project aims at building a convolutional network for digit recognition.The
+project primarily involves implementing a convolutional neural network which involves the
+use of backpropagation algorithm in order to train and build a digit recognition system.The
+system would use the feed forward neural network architecture.It uses fminunc to minimize the
+error w.r.t the weights and find the optimized values for the weights.This project is implem
+-ented in c++ 4.7, and prototyped in GNU Octave 3.6+.
+
+Prime Components : -
+*******************
+
+    Following are the prime components/blocks which would help build the neural network program.
+
+  Abstraction for the Neural Network Architecture
+  -----------------------------------------------
+     A framework for building the Convolutional Neural Network. This framework/workbench makes use
+of the following abstractions.
+
+  1. The NeuralNetwork Class
+       This class acts as an interface for the constructing program that constructs the
+     convolutional neural network. It consists of the components listed below.
+  2. The NNLayer Class
+       Models the concept of a layer in the neural network. 
+  3. The NNNeuron Class
+       Models the concept of a neuron in the neural network.
+  4. The NNConnection Class
+       Models the concept of a connection in the neural network.
+  5. The NNWeight Class.
+       Models the concept of a weight in the neural network.
+
+    A seperate concept/class for a Neural Network weight is necessary because in the specific
+program for training a "Convolutional Neural Network", many weights are shared across connections,
+hence the abstraction helps add simplicity to code.
+    Also, this specific abstraction of a feed forward neural network is wired to help train 
+the convolutional neural network, hence it may not generalize well to other neural network training
+methods.
+
+  Program for constructing convolution network
+  ---------------------------------------------
+    This program named ConvolutionNetwork.cpp constructs the convolutional neural network using
+the Neural Network Architecture abstraction specified above. It initialises the network to have
+random weights.
+
+  Program for training the convolution network
+  ---------------------------------------------
+    This program trains the convolution network using backpropogation algorithm to calculate the
+errors w.r.t the weights and fminunc to optimize the weight values so that these errors are minim
+ized. We take the help of an external library(containing fminunc) to minimize error.
+
+  Test program for the convolution network
+  -----------------------------------------
+    This program helps test the trained convolutional neural network using the above main program.
+
+  Data for testing and training purposes
+  ---------------------------------------
+    The project uses the MNIST database for recognition of handwritten digits as found on Professor
+Yann Lecun's website to train and test the Convolutional Neural Network.
+
+    
+References : - 
+************
+
